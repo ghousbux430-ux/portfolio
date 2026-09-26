@@ -74,7 +74,6 @@ span {
 
 /* =========================
    NAVBAR
-   Same as style.css
 ========================= */
 
 .navbar {
@@ -100,6 +99,10 @@ span {
     font-weight: 600;
     padding: 8px 0;
     line-height: 1.2;
+
+    /* Keep every tab the same size */
+    display: inline-block;
+    transform: none;
 }
 
 .custom-navbar .navbar-nav {
@@ -115,6 +118,8 @@ span {
     margin: 0;
     padding: 0;
     line-height: 1;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 .custom-navbar .nav-link:hover {
@@ -122,6 +127,9 @@ span {
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
+
+    /* Prevent hover from changing size */
+    transform: none;
 }
 
 .custom-navbar .nav-link.active {
@@ -129,6 +137,12 @@ span {
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
+
+    /* Prevent active tab from changing size */
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    transform: none !important;
+    scale: 1 !important;
 }
 
 
@@ -186,12 +200,21 @@ span {
 
     .custom-navbar .nav-item h6 {
         margin: 0;
+        font-size: inherit;
     }
 
     .custom-navbar .nav-link {
         font-size: 16px;
         padding: 10px 5px !important;
         line-height: 1.2;
+        transform: none;
+    }
+
+    .custom-navbar .nav-link.active {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        transform: none !important;
+        scale: 1 !important;
     }
 
 
