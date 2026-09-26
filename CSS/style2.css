@@ -1,0 +1,199 @@
+*{
+	background-color: #1C1A19;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1{
+    margin-left: 50%;
+}
+
+.profile-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    border: 2px solid #FF6B00;
+	margin-left: 30px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.profile-logo:hover{
+    width: 47px;
+    height: 47px;
+    border: 2px dotted blue;
+    /* border-color: blue; */
+}
+.skills-page {
+    padding: 80px 0;
+    border-color: #38bdf8;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Heading */
+
+.skills-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+.skills-heading h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.skills-heading h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #FF6B00;
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+.skills-heading p {
+    color: #cbd5e1;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.custom-navbar .brand-name{
+	color: white;
+    font-weight: 900;
+	font-size: 30px;
+	padding-left: 25px;
+	padding-top: 5px;
+}
+
+
+/* Skill Cards */
+
+.skill-card {
+    height: 100%;
+    padding: 30px;
+    background: #1C1A19;
+    border: 1px solid white;
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border: 3px solid  #FF6B00;
+    box-shadow: 5px 30px 40px rgba(255, 107, 0, 0.15);
+}
+
+
+/* Card Heading */
+
+.skill-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-card h3 i {
+    color: #FF6B00;
+    font-size: 25px;
+}
+
+
+/* Skill Items */
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list span {
+    padding: 8px 15px;
+    background: #0f172a;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.skill-list span:hover {
+    color: #FF6B00;
+    border-color: #FF6B00;
+    transform: translateY(-2px);
+}
+
+
+.skills-heading {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 55px;
+    color: #FF6B00 !important;
+    text-decoration: underline; 
+}
+
+.skills-heading h1 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+}
+
+.skills-heading h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #FF6B00;
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+.skills-heading p {
+    text-align: center;
+    margin-top: 25px;
+}
+span{
+    color: #FF6B00;
+}
+span.name{
+	color: #FF6B00;
+}
+
+.navbar{
+	color:#FF6B00;
+}
+
+.custom-navbar .nav-link {
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 600;
+}
+.custom-navbar .navbar-nav {
+    margin-right: 120px !important;
+    gap: 20px;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #FF6B00;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+.custom-navbar .nav-link.active {
+    color: #FF6B00 !important;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}

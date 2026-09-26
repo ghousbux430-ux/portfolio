@@ -1,0 +1,167 @@
+*{
+	background-color: #1C1A19;
+	margin: 0px;
+	padding: 0px;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+	/* padding-top: 20px; */
+}
+
+.profile-image {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #FF6B00;
+	margin-left: 190px;
+	margin-bottom: 50px;
+}
+.profile-image:hover{
+    width: 375px;
+    height: 375px;
+    border: 8px dotted #FF6B00;
+    /* border-color: #38bdf8; */
+}
+
+.profile-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    border: 2px solid #FF6B00;
+	margin-left: 30px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.profile-logo:hover{
+    width: 47px;
+    height: 47px;
+    border: 2px dotted blue;
+    /* border-color: blue; */
+}
+
+span{
+    color: #FF6B00;
+}
+span.name{
+	color: #FF6B00;
+}
+
+span.intro{
+    color: white;
+}
+
+
+p{
+    font-size: 26px;
+}
+
+
+
+.navbar{
+	color:#FF6B00;
+}
+
+.custom-navbar .brand-name{
+	color: white;
+    font-weight: 900;
+	font-size: 30px;
+	padding-left: 25px;
+	padding-top: 5px;
+}
+.col-md-6{
+	color: white;
+}
+
+.profile-links {
+	padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #38bdf8;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.3s;
+	margin-right: 10px;
+}
+.profile-links{
+	margin: 25px;
+}
+
+.social-link:hover {
+    color: #FF6B00;
+    border: 3px dotted white;
+    transform: translateY(-4px);
+}
+
+.custom-navbar .nav-link {
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.custom-navbar .navbar-nav {
+    margin-right: 120px !important;
+    gap: 20px;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #FF6B00;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+.custom-navbar .nav-link.active {
+    color: #FF6B00 !important;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+.resume-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    margin: 25px auto 0;
+
+    font-size: large;
+    padding: 12px 25px;
+
+    background: #FF6B00;
+    color: #0f172a;
+
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.resume-btn:hover {
+    background: #a00ee9;
+    color: black;
+    transform: translateY(-2px);
+}
+

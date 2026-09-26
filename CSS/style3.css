@@ -1,0 +1,161 @@
+/* =========================
+   SERVICES PAGE
+========================= */
+
+.services-page {
+    /* padding: 80px 0; */
+    min-height: 80vh;
+    background: #1C1A19;
+    padding-bottom: 40px;
+}
+
+/* Heading */
+
+.services-heading {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 55px;
+}
+
+.services-heading h1 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.services-heading h1::after {
+    content: "";
+    display: block;
+    width: 245px;
+    height: 4px;
+    background: #FF6B00;
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+.services-heading p {
+    color: #cbd5e1;
+    font-size: 17px;
+    margin-top: 22px;
+}
+
+
+/* Service Card */
+
+.service-card {
+    height: 100%;
+    padding: 35px 30px;
+    background: #1e293b;
+    border: 2px solid white;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background-color: #1C1A19;
+    border: 3px solid #FF6B00;
+    box-shadow: 5px 30px 40px rgba(255, 107, 0, 0.15);
+}
+
+
+/* Icon */
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #A1A1A1;
+    border-radius: 50%;
+
+    color: #FF6B00;
+    font-size: 30px;
+
+    transition: 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background: #FF6B00;
+    color: #0f172a;
+    transform: scale(1.1);
+}
+
+
+/* Title */
+
+.service-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+
+/* Description */
+
+.service-card p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.profile-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    border: 2px solid #FF6B00;
+	margin-left: 30px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.profile-logo:hover{
+    width: 47px;
+    height: 47px;
+    border: 2px dotted blue;
+    /* border-color: blue; */
+}
+
+.custom-navbar .brand-name{
+	color: white;
+    font-weight: 900;
+	font-size: 30px;
+	padding-left: 25px;
+	padding-top: 5px;
+}
+
+.custom-navbar .nav-link {
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 600;
+}
+.custom-navbar .navbar-nav {
+    margin-right: 120px !important;
+    gap: 20px;
+}
+.custom-navbar .nav-link:hover {
+    color: #FF6B00;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+.custom-navbar .nav-link.active {
+    color: #FF6B00 !important;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+span{
+    color: #FF6B00;
+}
