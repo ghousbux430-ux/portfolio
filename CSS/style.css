@@ -165,3 +165,131 @@ p{
     transform: translateY(-2px);
 }
 
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .custom-navbar {
+        padding: 10px 15px;
+    }
+
+    .custom-navbar .navbar-nav {
+        margin-right: 0 !important;
+        margin-top: 15px;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 10px 5px !important;
+        font-size: 16px;
+    }
+
+    /* Brand */
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .profile-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Profile image */
+    .profile-image {
+        width: 220px;
+        height: 220px;
+        margin-top: 40px;
+    }
+
+    /* Social links */
+    .profile-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* About */
+    .about {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .about h1 {
+        font-size: 32px;
+        margin-top: 30px;
+    }
+
+    .about p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* Skills */
+    .skills-page {
+        padding: 60px 15px;
+    }
+
+    .skills-heading h1 {
+        font-size: 32px;
+    }
+
+    .skills-heading p {
+        font-size: 15px;
+    }
+
+    .skill-card {
+        padding: 25px 20px;
+    }
+
+    /* Services */
+    .services-page {
+        padding: 60px 15px;
+    }
+
+    .services-heading h1 {
+        font-size: 32px;
+    }
+
+    .services-heading p {
+        font-size: 15px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    /* Contact */
+    .contact-page {
+        padding: 60px 15px;
+    }
+
+    .contact-heading h1 {
+        font-size: 32px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .contact-form h2 {
+        font-size: 24px;
+    }
+}
