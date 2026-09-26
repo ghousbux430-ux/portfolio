@@ -74,6 +74,7 @@ span {
 
 /* =========================
    NAVBAR
+   Same as style.css
 ========================= */
 
 .navbar {
@@ -156,7 +157,6 @@ span {
 
     .custom-navbar {
         padding: 10px 15px;
-        min-height: auto;
     }
 
     .profile-logo {
@@ -189,10 +189,13 @@ span {
     }
 
     .custom-navbar .nav-link {
-        transition: 0.3s;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 5px !important;
+        line-height: 1.2;
     }
+
+
+    /* About Section */
 
     .about {
         min-height: auto;
@@ -213,6 +216,9 @@ span {
         margin: 0;
     }
 
+
+    /* Hexagon */
+
     .hexagon {
         width: 300px;
         height: 340px;
@@ -221,7 +227,10 @@ span {
         margin-bottom: 40px;
     }
 
-  .about .col-md-7 {
+
+    /* About Content */
+
+    .about .col-md-7 {
         width: 100%;
         padding-left: 10px;
         padding-right: 10px;
@@ -246,6 +255,11 @@ span {
         text-align: center;
     }
 }
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 480px) {
 
