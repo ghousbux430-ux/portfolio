@@ -71,18 +71,17 @@ span {
     margin-bottom: 100px;
 }
 
-.profile-logo {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid #FF6B00;
-    margin-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
     color: #FF6B00;
+}
+
+.custom-navbar {
+    min-height: 65px;
 }
 
 .custom-navbar .brand-name {
@@ -91,17 +90,30 @@ span {
     font-size: 30px;
     padding-left: 25px;
     padding-top: 5px;
+    margin-bottom: 0;
 }
 
 .custom-navbar .nav-link {
     transition: 0.3s;
     font-size: 20px;
     font-weight: 600;
+    padding: 8px 0;
+    line-height: 1.2;
 }
 
 .custom-navbar .navbar-nav {
     margin-right: 120px !important;
     gap: 20px;
+}
+
+.custom-navbar .nav-item {
+    height: auto;
+}
+
+.custom-navbar .nav-item h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
 .custom-navbar .nav-link:hover {
@@ -120,6 +132,21 @@ span {
 
 
 /* =========================
+   PROFILE LOGO
+========================= */
+
+.profile-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #FF6B00;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
    MOBILE RESPONSIVE
 ========================= */
 
@@ -129,6 +156,7 @@ span {
 
     .custom-navbar {
         padding: 10px 15px;
+        min-height: auto;
     }
 
     .profile-logo {
@@ -152,9 +180,18 @@ span {
         gap: 0;
     }
 
+    .custom-navbar .nav-item {
+        height: auto;
+    }
+
+    .custom-navbar .nav-item h6 {
+        margin: 0;
+    }
+
     .custom-navbar .nav-link {
         font-size: 16px;
         padding: 10px 5px !important;
+        line-height: 1.2;
     }
 
 
@@ -185,10 +222,8 @@ span {
     .hexagon {
         width: 300px;
         height: 340px;
-
         margin-left: auto;
         margin-right: auto;
-
         margin-bottom: 40px;
     }
 
