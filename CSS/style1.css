@@ -190,12 +190,9 @@ span {
 
     .custom-navbar .nav-link {
         font-size: 16px;
-        padding: 10px 5px !important;
+        padding: 5px 5px !important;
         line-height: 1.2;
     }
-
-
-    /* About Section */
 
     .about {
         min-height: auto;
@@ -216,9 +213,6 @@ span {
         margin: 0;
     }
 
-
-    /* Hexagon */
-
     .hexagon {
         width: 300px;
         height: 340px;
@@ -227,10 +221,7 @@ span {
         margin-bottom: 40px;
     }
 
-
-    /* About Content */
-
-    .about .col-md-7 {
+  .about .col-md-7 {
         width: 100%;
         padding-left: 10px;
         padding-right: 10px;
@@ -255,11 +246,6 @@ span {
         text-align: center;
     }
 }
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
 
 @media (max-width: 480px) {
 
