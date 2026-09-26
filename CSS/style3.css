@@ -193,8 +193,6 @@ span {
 
 @media (max-width: 991px) {
 
-    /* Navbar */
-
     .custom-navbar .navbar-nav {
         margin-right: 0 !important;
         margin-top: 15px;
@@ -205,9 +203,6 @@ span {
         padding: 10px 0 !important;
         font-size: 17px;
     }
-
-
-    /* Services */
 
     .services-page {
         padding-bottom: 50px;
@@ -229,8 +224,6 @@ span {
 ========================= */
 
 @media (max-width: 768px) {
-
-    /* Navbar */
 
     .custom-navbar {
         padding: 10px 15px;
@@ -387,6 +380,80 @@ span {
         width: 60px;
         height: 60px;
         font-size: 25px;
+    }
+
+}
+
+
+/* =========================
+   PAGE LOAD ANIMATIONS
+========================= */
+
+/* Navbar comes from top */
+
+.page-load-top {
+    animation: fromTop 1s ease-out;
+}
+
+
+/* Services heading comes from left */
+
+.services-heading-animation {
+    animation: fromLeft 1s ease-out;
+}
+
+
+/* Service cards come from right */
+
+.services-cards-animation {
+    animation: fromRight 1.2s ease-out;
+}
+
+
+/* =========================
+   ANIMATION KEYFRAMES
+========================= */
+
+@keyframes fromTop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fromLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes fromRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 
 }
