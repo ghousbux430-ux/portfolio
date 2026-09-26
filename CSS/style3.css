@@ -3,13 +3,15 @@
 ========================= */
 
 .services-page {
-    /* padding: 80px 0; */
     min-height: 80vh;
     background: #1C1A19;
     padding-bottom: 40px;
 }
 
-/* Heading */
+
+/* =========================
+   HEADING
+========================= */
 
 .services-heading {
     width: 100%;
@@ -43,7 +45,9 @@
 }
 
 
-/* Service Card */
+/* =========================
+   SERVICE CARD
+========================= */
 
 .service-card {
     height: 100%;
@@ -63,7 +67,9 @@
 }
 
 
-/* Icon */
+/* =========================
+   ICON
+========================= */
 
 .service-icon {
     width: 70px;
@@ -90,7 +96,9 @@
 }
 
 
-/* Title */
+/* =========================
+   TITLE
+========================= */
 
 .service-card h3 {
     color: white;
@@ -99,7 +107,9 @@
 }
 
 
-/* Description */
+/* =========================
+   DESCRIPTION
+========================= */
 
 .service-card p {
     color: #cbd5e1;
@@ -108,30 +118,38 @@
     margin: 0;
 }
 
+
+/* =========================
+   PROFILE LOGO
+========================= */
+
 .profile-logo {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    /* object-fit: cover; */
     border: 2px solid #FF6B00;
-	margin-left: 30px;
+    margin-left: 30px;
     margin-top: 10px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-.profile-logo:hover{
+.profile-logo:hover {
     width: 47px;
     height: 47px;
     border: 2px dotted blue;
-    /* border-color: blue; */
 }
 
-.custom-navbar .brand-name{
-	color: white;
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar .brand-name {
+    color: white;
     font-weight: 900;
-	font-size: 30px;
-	padding-left: 25px;
-	padding-top: 5px;
+    font-size: 30px;
+    padding-left: 25px;
+    padding-top: 5px;
 }
 
 .custom-navbar .nav-link {
@@ -139,10 +157,12 @@
     font-size: 20px;
     font-weight: 600;
 }
+
 .custom-navbar .navbar-nav {
     margin-right: 120px !important;
     gap: 20px;
 }
+
 .custom-navbar .nav-link:hover {
     color: #FF6B00;
     text-decoration: underline;
@@ -156,6 +176,217 @@
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
 }
-span{
+
+
+/* =========================
+   SPAN
+========================= */
+
+span {
     color: #FF6B00;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+    /* Navbar */
+
+    .custom-navbar .navbar-nav {
+        margin-right: 0 !important;
+        margin-top: 15px;
+        gap: 0;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 10px 0 !important;
+        font-size: 17px;
+    }
+
+
+    /* Services */
+
+    .services-page {
+        padding-bottom: 50px;
+    }
+
+    .services-heading h1 {
+        font-size: 36px;
+    }
+
+    .services-heading p {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .custom-navbar {
+        padding: 10px 15px;
+    }
+
+    .profile-logo {
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .custom-navbar .brand-name {
+        font-size: 22px;
+        padding-left: 10px;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .custom-navbar .navbar-nav {
+        margin-right: 0 !important;
+        margin-top: 15px;
+        gap: 0;
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 16px;
+        padding: 10px 5px !important;
+    }
+
+
+    /* Services Page */
+
+    .services-page {
+        min-height: auto;
+        padding: 50px 15px 50px;
+    }
+
+    .services-page .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    /* Heading */
+
+    .services-heading {
+        margin: 0 auto 40px;
+        padding: 0 5px;
+    }
+
+    .services-heading h1 {
+        font-size: 32px;
+    }
+
+    .services-heading h1::after {
+        width: 180px;
+    }
+
+    .services-heading p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-top: 20px;
+    }
+
+
+    /* Service Cards */
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+
+    /* Icon */
+
+    .service-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .profile-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .custom-navbar .brand-name {
+        font-size: 20px;
+    }
+
+
+    /* Services */
+
+    .services-page {
+        padding: 45px 10px 45px;
+    }
+
+    .services-heading {
+        margin-bottom: 35px;
+    }
+
+    .services-heading h1 {
+        font-size: 28px;
+    }
+
+    .services-heading h1::after {
+        width: 160px;
+    }
+
+    .services-heading p {
+        font-size: 14px;
+    }
+
+
+    /* Cards */
+
+    .service-card {
+        padding: 25px 18px;
+    }
+
+    .service-card h3 {
+        font-size: 19px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+    }
+
 }
