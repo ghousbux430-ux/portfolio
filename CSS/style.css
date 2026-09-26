@@ -1,14 +1,14 @@
-*{
-	background-color: #1C1A19;
-	margin: 0px;
-	padding: 0px;
+* {
+    background-color: #1C1A19;
+    margin: 0px;
+    padding: 0px;
 }
 
 .hero {
     min-height: 80vh;
     display: flex;
     align-items: center;
-	/* padding-top: 20px; */
+    /* padding-top: 20px; */
 }
 
 .profile-image {
@@ -17,10 +17,11 @@
     border-radius: 50%;
     object-fit: cover;
     border: 8px solid #FF6B00;
-	margin-left: 190px;
-	margin-bottom: 50px;
+    margin-left: 190px;
+    margin-bottom: 50px;
 }
-.profile-image:hover{
+
+.profile-image:hover {
     width: 375px;
     height: 375px;
     border: 8px dotted #FF6B00;
@@ -33,53 +34,52 @@
     border-radius: 50%;
     /* object-fit: cover; */
     border: 2px solid #FF6B00;
-	margin-left: 30px;
+    margin-left: 30px;
     margin-top: 10px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-.profile-logo:hover{
+.profile-logo:hover {
     width: 47px;
     height: 47px;
     border: 2px dotted blue;
     /* border-color: blue; */
 }
 
-span{
+span {
     color: #FF6B00;
 }
-span.name{
-	color: #FF6B00;
+
+span.name {
+    color: #FF6B00;
 }
 
-span.intro{
+span.intro {
     color: white;
 }
 
-
-p{
+p {
     font-size: 26px;
 }
 
-
-
-.navbar{
-	color:#FF6B00;
+.navbar {
+    color: #FF6B00;
 }
 
-.custom-navbar .brand-name{
-	color: white;
+.custom-navbar .brand-name {
+    color: white;
     font-weight: 900;
-	font-size: 30px;
-	padding-left: 25px;
-	padding-top: 5px;
+    font-size: 30px;
+    padding-left: 25px;
+    padding-top: 5px;
 }
-.col-md-6{
-	color: white;
+
+.col-md-6 {
+    color: white;
 }
 
 .profile-links {
-	padding-top: 100px;
+    padding-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,10 +101,11 @@ p{
     text-decoration: none;
     font-size: 24px;
     transition: 0.3s;
-	margin-right: 10px;
+    margin-right: 10px;
 }
-.profile-links{
-	margin: 25px;
+
+.profile-links {
+    margin: 25px;
 }
 
 .social-link:hover {
@@ -167,21 +168,41 @@ p{
 }
 
 
-
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
 
-    /* Navbar */
+    /* =========================
+       NAVBAR
+    ========================= */
+
     .custom-navbar {
         padding: 10px 15px;
+    }
+
+    .profile-logo {
+        width: 40px;
+        height: 40px;
+
+        /* Reset desktop margin */
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .custom-navbar .brand-name {
+        font-size: 22px;
+        padding-left: 10px;
+        padding-top: 0;
+        margin-bottom: 0;
     }
 
     .custom-navbar .navbar-nav {
         margin-right: 0 !important;
         margin-top: 15px;
+        gap: 0;
     }
 
     .custom-navbar .nav-link {
@@ -189,45 +210,123 @@ p{
         font-size: 16px;
     }
 
-    /* Brand */
-    .brand-name {
-        font-size: 22px;
-    }
 
-    .profile-logo {
-        width: 40px;
-        height: 40px;
-    }
+    /* =========================
+       HERO
+    ========================= */
 
-    /* Hero */
     .hero {
-        padding: 60px 20px;
+        width: 100%;
+        min-height: auto;
+        padding: 50px 15px 40px;
+        display: block;
         text-align: center;
     }
 
+    .hero .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero .row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero .col-md-6 {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    /* =========================
+       HERO HEADINGS
+    ========================= */
+
     .hero h1 {
         font-size: 32px;
+        line-height: 1.3;
+        margin-left: 0 !important;
     }
+
+
+    /* =========================
+       HERO PARAGRAPH
+    ========================= */
 
     .hero p {
         font-size: 15px;
         line-height: 1.7;
+        margin-top: 20px;
     }
 
-    /* Profile image */
-    .profile-image {
-        width: 220px;
-        height: 220px;
-        margin-top: 40px;
-    }
 
-    /* Social links */
+    /* =========================
+       SOCIAL LINKS
+    ========================= */
+
     .profile-links {
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 15px;
+
+        /* Reset desktop spacing */
+        margin: 25px 0;
+        padding: 20px 0;
     }
 
-    /* About */
+    .social-link {
+        width: 55px;
+        height: 55px;
+        margin-right: 0;
+    }
+
+
+    /* =========================
+       RESUME BUTTON
+    ========================= */
+
+    .resume-btn {
+        margin: 25px auto 0;
+    }
+
+
+    /* =========================
+       PROFILE IMAGE
+    ========================= */
+
+    .hero .profile-image {
+        display: block;
+
+        width: 270px;
+        height: 270px;
+
+        max-width: 80vw;
+
+        /* VERY IMPORTANT:
+           Remove desktop margin-left */
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-top: 45px;
+        margin-bottom: 20px;
+    }
+
+    .hero .profile-image:hover {
+        width: 275px;
+        height: 275px;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
     .about {
         padding: 60px 20px;
         text-align: center;
@@ -243,7 +342,11 @@ p{
         line-height: 1.8;
     }
 
-    /* Skills */
+
+    /* =========================
+       SKILLS
+    ========================= */
+
     .skills-page {
         padding: 60px 15px;
     }
@@ -260,7 +363,11 @@ p{
         padding: 25px 20px;
     }
 
-    /* Services */
+
+    /* =========================
+       SERVICES
+    ========================= */
+
     .services-page {
         padding: 60px 15px;
     }
@@ -277,7 +384,11 @@ p{
         padding: 30px 20px;
     }
 
-    /* Contact */
+
+    /* =========================
+       CONTACT
+    ========================= */
+
     .contact-page {
         padding: 60px 15px;
     }
@@ -292,5 +403,61 @@ p{
 
     .contact-form h2 {
         font-size: 24px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .profile-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .custom-navbar .brand-name {
+        font-size: 20px;
+    }
+
+    .hero {
+        padding: 40px 10px 30px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero .profile-image {
+        width: 250px;
+        height: 250px;
+        max-width: 80vw;
+    }
+
+    .hero .profile-image:hover {
+        width: 255px;
+        height: 255px;
+    }
+
+    .social-link {
+        width: 52px;
+        height: 52px;
+    }
+
+    .skills-heading h1,
+    .services-heading h1,
+    .contact-heading h1 {
+        font-size: 28px;
+    }
+
+    .skill-card h3,
+    .service-card h3 {
+        font-size: 19px;
     }
 }
