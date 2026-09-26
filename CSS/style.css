@@ -169,6 +169,109 @@ p {
 
 
 /* =========================
+   PAGE LOAD ANIMATIONS
+========================= */
+
+/* Navbar comes from top */
+
+.page-load-top {
+    animation: fromTop 1s ease-out;
+}
+
+
+/* Introduction comes from left */
+
+.hero-content {
+    animation: fromLeft 1s ease-out;
+}
+
+
+/* Profile image comes from right */
+
+.profile-container {
+    animation: fromRight 1s ease-out;
+}
+
+
+/* Social links come from bottom */
+
+.profile-links {
+    animation: fromBottom 1.2s ease-out;
+}
+
+
+/* Resume comes from bottom */
+
+.resume-btn {
+    animation: fromBottom 1.4s ease-out;
+}
+
+
+/* =========================
+   ANIMATION KEYFRAMES
+========================= */
+
+@keyframes fromTop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fromLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes fromRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes fromBottom {
+
+    from {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
    MOBILE RESPONSIVE
 ========================= */
 
@@ -186,7 +289,6 @@ p {
         width: 40px;
         height: 40px;
 
-        /* Reset desktop margin */
         margin-left: 5px;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -208,6 +310,23 @@ p {
     .custom-navbar .nav-link {
         padding: 10px 5px !important;
         font-size: 16px;
+    }
+
+
+    /* =========================
+       HAMBURGER BUTTON
+    ========================= */
+
+    .navbar-toggler {
+        width: 45px;
+        height: 40px;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .navbar-toggler-icon {
+        width: 22px;
+        height: 22px;
     }
 
 
@@ -275,7 +394,6 @@ p {
         flex-wrap: wrap;
         gap: 15px;
 
-        /* Reset desktop spacing */
         margin: 25px 0;
         padding: 20px 0;
     }
@@ -308,8 +426,6 @@ p {
 
         max-width: 80vw;
 
-        /* VERY IMPORTANT:
-           Remove desktop margin-left */
         margin-left: auto;
         margin-right: auto;
 
@@ -404,6 +520,7 @@ p {
     .contact-form h2 {
         font-size: 24px;
     }
+
 }
 
 
@@ -421,6 +538,21 @@ p {
     .custom-navbar .brand-name {
         font-size: 20px;
     }
+
+
+    /* Smaller hamburger */
+
+    .navbar-toggler {
+        width: 40px;
+        height: 36px;
+        padding: 4px;
+    }
+
+    .navbar-toggler-icon {
+        width: 20px;
+        height: 20px;
+    }
+
 
     .hero {
         padding: 40px 10px 30px;
@@ -460,4 +592,5 @@ p {
     .service-card h3 {
         font-size: 19px;
     }
+
 }
