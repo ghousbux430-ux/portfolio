@@ -1,7 +1,7 @@
-*{
-	background-color:#1C1A19;
-	margin: 0px;
-	padding: 0px;
+* {
+    background-color: #1C1A19;
+    margin: 0px;
+    padding: 0px;
 }
 
 .about {
@@ -18,10 +18,7 @@
     margin-left: 90px;
 }
 
-
-
-
-.about h2{
+.about h2 {
     margin-bottom: 10px;
     font-weight: 600;
     margin-left: 90px;
@@ -30,10 +27,7 @@
 .about p {
     font-size: 19px;
     line-height: 1.8;
-    /* margin-right: 5px;
-    padding-right: 10px; */
     margin-left: 90px;
-
 }
 
 .hexagon {
@@ -53,7 +47,7 @@
     );
 }
 
-.hexagon:hover{
+.hexagon:hover {
     background-color: white;
 }
 
@@ -72,7 +66,7 @@
     );
 }
 
-span{
+span {
     color: #FF6B00;
     margin-bottom: 100px;
 }
@@ -81,23 +75,22 @@ span{
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    /* object-fit: cover; */
     border: 2px solid #FF6B00;
-	margin-left: 30px;
+    margin-left: 30px;
     margin-top: 10px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-.navbar{
-	color:#FF6B00;
+.navbar {
+    color: #FF6B00;
 }
 
-.custom-navbar .brand-name{
-	color: white;
+.custom-navbar .brand-name {
+    color: white;
     font-weight: 900;
-	font-size: 30px;
-	padding-left: 25px;
-	padding-top: 5px;
+    font-size: 30px;
+    padding-left: 25px;
+    padding-top: 5px;
 }
 
 .custom-navbar .nav-link {
@@ -105,6 +98,7 @@ span{
     font-size: 20px;
     font-weight: 600;
 }
+
 .custom-navbar .navbar-nav {
     margin-right: 120px !important;
     gap: 20px;
@@ -122,4 +116,147 @@ span{
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .custom-navbar {
+        padding: 10px 15px;
+    }
+
+    .profile-logo {
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .custom-navbar .brand-name {
+        font-size: 22px;
+        padding-left: 10px;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .custom-navbar .navbar-nav {
+        margin-right: 0 !important;
+        margin-top: 15px;
+        gap: 0;
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 16px;
+        padding: 10px 5px !important;
+    }
+
+
+    /* About Section */
+
+    .about {
+        min-height: auto;
+        display: block;
+        padding: 60px 15px;
+        text-align: center;
+    }
+
+    .about .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .about .row {
+        width: 100%;
+        margin: 0;
+    }
+
+
+    /* Hexagon */
+
+    .hexagon {
+        width: 300px;
+        height: 340px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 40px;
+    }
+
+
+    /* About Content */
+
+    .about .col-md-7 {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .about h1 {
+        font-size: 32px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .about p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .profile-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .custom-navbar .brand-name {
+        font-size: 20px;
+    }
+
+    .about {
+        padding: 45px 10px;
+    }
+
+    .hexagon {
+        width: 260px;
+        height: 295px;
+        margin-bottom: 35px;
+    }
+
+    .about h1 {
+        font-size: 28px;
+    }
+
+    .about h2 {
+        font-size: 21px;
+    }
+
+    .about p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
 }
