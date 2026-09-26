@@ -24,7 +24,7 @@
 .profile-image:hover {
     width: 375px;
     height: 375px;
-    border: 8px dotted #FF6B00;
+    border: 8px dotted white;
     /* border-color: #38bdf8; */
 }
 
