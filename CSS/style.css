@@ -302,6 +302,11 @@ section {
     );
 }
 
+.about-image .profile-image:hover{
+    transform: scale(1.04);
+    box-shadow: 0 20px 50px rgba(255, 107, 0, 0.4);
+}
+
 .about-content {
     padding: 30px;
 }
@@ -455,8 +460,8 @@ section {
 
 .service-card:hover {
     transform: translateY(-10px);
-    border-color: #FF6B00;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    border: 2px solid #FF6B00;
+    box-shadow: 0 5px 15px #FF6B00;
 }
 
 .service-icon {
