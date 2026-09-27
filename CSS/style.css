@@ -378,7 +378,7 @@ section {
 .skill-card:hover {
     transform: translateY(-10px);
     border: 2px solid #FF6B00;
-    box-shadow: 0 15px 25px #FF6B00;
+    box-shadow: 0 5px 15px #FF6B00;
 }
 
 .skill-icon {
