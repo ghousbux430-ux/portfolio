@@ -1,40 +1,51 @@
+/* =========================
+   GLOBAL
+========================= */
+
 * {
-    background-color: #1C1A19;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    /* padding-top: 20px; */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
-.profile-image {
-    width: 370px;
-    height: 370px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 8px solid #FF6B00;
-    margin-right: 190px;
-    margin-bottom: 50px;
+body {
+    background: #1C1A19;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
-.profile-image:hover {
-    width: 375px;
-    height: 375px;
-    border: 8px dotted white;
-    /* border-color: #38bdf8; */
+a {
+    text-decoration: none;
 }
 
+section {
+    width: 100%;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+    background: rgba(28, 26, 25, 0.96);
+    backdrop-filter: blur(10px);
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 107, 0, 0.15);
+}
 .profile-logo {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     /* object-fit: cover; */
     border: 2px solid #FF6B00;
-    margin-left: 30px;
+    margin-right: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -45,222 +56,650 @@
     border: 2px dotted blue;
     /* border-color: blue; */
 }
+.logo {
+    color: #ffffff !important;
+    font-size: 28px;
+    font-weight: 700;
+}
 
-span {
+.logo span {
     color: #FF6B00;
 }
 
-span.name {
+.navbar-nav {
+    gap: 10px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 14px !important;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FF6B00 !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 2px;
+    height: 2px;
+    background: #FF6B00;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-link.active {
+    color: #FF6B00 !important;
+}
+
+
+/* Mobile Navbar */
+
+.navbar-toggler {
+    border: 1px solid #FF6B00;
+    padding: 6px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.25);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.hero-section {
+    min-height: 100vh;
+    padding-top: 130px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    background: #1C1A19;
+}
+
+.hero-content {
+    padding: 30px;
+}
+
+.hero-small-text {
+    color: #FF6B00;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-name {
     color: #FF6B00;
 }
 
-span.intro {
-    color: white;
+.hero-content h2 {
+    color: #ffffff;
+    font-size: 32px;
+    min-height: 45px;
+    margin-top: 10px;
 }
 
-p {
-    font-size: 26px;
+#user-name {
+    color: #38bdf8;
 }
 
-.navbar {
-    color: #FF6B00;
+.hero-description {
+    max-width: 600px;
+    color: #cbd5e1;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-top: 20px;
 }
 
-.custom-navbar .brand-name {
-    color: white;
-    font-weight: 900;
-    font-size: 30px;
-    padding-left: 25px;
-    padding-top: 5px;
-}
 
-.col-md-6 {
-    color: white;
-}
+/* Profile Image */
 
-.profile-links {
-    padding-top: 100px;
+.profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+}
+
+.hero .profile-image,
+.profile-container .profile-image {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #FF6B00;
+    box-shadow: 0 0 35px rgba(255, 107, 0, 0.25);
+    transition: 0.4s ease;
+}
+
+.profile-container .profile-image:hover {
+    transform: scale(1.04);
+    box-shadow: 0 20px 50px rgba(255, 107, 0, 0.4);
+}
+
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.profile-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-top: 30px;
-    padding: 20px 0;
-    flex-wrap: wrap;
 }
 
 .social-link {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #38bdf8;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    transition: 0.3s;
-    margin-right: 10px;
-}
-
-.profile-links {
-    margin: 25px;
+    border: 2px solid #FF6B00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 21px;
+    transition: 0.3s ease;
 }
 
 .social-link:hover {
-    color: #FF6B00;
-    border: 3px dotted white;
-    transform: translateY(-4px);
+    color: #ffffff;
+    background: #FF6B00;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
 }
 
-.custom-navbar .nav-link {
-    transition: 0.3s;
-    font-size: 20px;
-    font-weight: 600;
-}
 
-.custom-navbar .navbar-nav {
-    margin-right: 120px !important;
-    gap: 20px;
-    margin-right: 0 !important;
-}
-
-.custom-navbar .nav-link:hover {
-    color: #FF6B00;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 6px;
-}
-
-.custom-navbar .nav-link.active {
-    color: #FF6B00 !important;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 6px;
-}
+/* Resume */
 
 .resume-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-
-    width: fit-content;
-
-    margin: 25px auto 0;
-
-    font-size: large;
-    padding: 12px 25px;
-
-    background: #FF6B00;
-    color: #0f172a;
-
-    text-decoration: none;
+    margin-top: 25px;
+    padding: 13px 28px;
+    color: #ffffff;
+    border: 2px solid #FF6B00;
     border-radius: 50px;
-    font-weight: 600;
+    transition: 0.3s ease;
 }
 
 .resume-btn:hover {
-    background: #a00ee9;
-    color: black;
-    transform: translateY(-2px);
+    background: #FF6B00;
+    color: #ffffff;
+    transform: translateY(-3px);
 }
 
 
 /* =========================
-   PAGE LOAD ANIMATIONS
+   ABOUT
 ========================= */
 
-/* Navbar comes from top */
+.about-section {
+    min-height: 100vh;
+    padding: 120px 0;
+    background: #1C1A19;
+    display: flex;
+    align-items: center;
+}
+
+.about-image {
+    width: 380px;
+    height: 430px;
+    margin: auto;
+    background: #FF6B00;
+    clip-path: polygon(
+        25% 6%,
+        75% 6%,
+        100% 25%,
+        100% 75%,
+        75% 94%,
+        25% 94%,
+        0% 75%,
+        0% 25%
+    );
+    padding: 8px;
+}
+
+.about-image .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    clip-path: polygon(
+        25% 6%,
+        75% 6%,
+        100% 25%,
+        100% 75%,
+        75% 94%,
+        25% 94%,
+        0% 75%,
+        0% 25%
+    );
+}
+
+.about-content {
+    padding: 30px;
+}
+
+.about-brand {
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-brand span {
+    color: #FF6B00;
+}
+
+.about-content h2 {
+    color: #38bdf8;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-page {
+    min-height: 80vh;
+    padding: 90px 0;
+    background: #1C1A19;
+}
+
+.skills-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills-heading h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.skills-heading h1 span {
+    color: #FF6B00;
+}
+
+.skills-heading p {
+    color: #94a3b8;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+
+/* Skill Cards */
+
+.skill-card {
+    height: 90%;
+    padding: 30px 20px;
+    text-align: center;
+    background: #1e293b;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    border-radius: 18px;
+    transition: 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: #FF6B00;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.skill-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 107, 0, 0.12);
+    color: #FF6B00;
+    font-size: 32px;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    background: #FF6B00;
+    color: #ffffff;
+}
+
+.skill-card h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-page {
+    min-height: 100vh;
+    padding: 120px 0;
+    background: #1C1A19;
+}
+
+.services-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.services-heading h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.services-heading p {
+    color: #94a3b8;
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+
+/* Service Card */
+
+.service-card {
+    height: 100%;
+    padding: 35px 25px;
+    text-align: center;
+    background: #1e293b;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    border-radius: 18px;
+    transition: 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #FF6B00;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 107, 0, 0.12);
+    color: #FF6B00;
+    font-size: 32px;
+    transition: 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background: #FF6B00;
+    color: #ffffff;
+}
+
+.service-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-page {
+    min-height: 100vh;
+    padding: 120px 0;
+    background: #1C1A19;
+}
+
+.contact-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-heading h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.contact-heading p {
+    color: #94a3b8;
+    margin-top: 15px;
+}
+
+
+.contact-form-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact-form-container form {
+    background: #289986;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #533355;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background: #000000;
+    border: 1px solid #facc15;
+    color: #ffffff;
+    padding: 13px 15px;
+    border-radius: 8px;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+.form-control:focus {
+    background: #000000;
+    color: #ffffff;
+    border-color: #FF6B00;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+
+/* Send Button */
+
+.send-btn {
+    border: none;
+    padding: 13px 28px;
+    border-radius: 50px;
+    background: #FF6B00;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #e85d00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
+}
+
+.send-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: #090d15;
+    border-top: 1px solid rgba(255, 107, 0, 0.15);
+}
+
+.footer p {
+    margin: 0;
+    color: #94a3b8;
+}
+
+
+/* =========================
+   SCROLL REVEAL ANIMATION
+========================= */
+
+[data-reveal] {
+    opacity: 0;
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+
+    will-change: opacity, transform;
+}
+
+
+/* From Left */
+
+[data-reveal="left"] {
+    transform: translateX(-100px);
+}
+
+
+/* From Right */
+
+[data-reveal="right"] {
+    transform: translateX(100px);
+}
+
+
+/* From Bottom */
+
+[data-reveal="bottom"] {
+    transform: translateY(80px);
+}
+
+
+/* From Top */
+
+[data-reveal="top"] {
+    transform: translateY(-80px);
+}
+
+
+/* Visible */
+
+[data-reveal].reveal-show {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+
+/* =========================
+   ANIMATION DELAYS
+========================= */
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+.delay-6 {
+    transition-delay: 0.6s;
+}
+
+
+/* =========================
+   PAGE LOAD ANIMATION
+========================= */
 
 .page-load-top {
-    animation: fromTop 1s ease-out;
+    animation: fromTop 1s ease forwards;
 }
-
-
-/* Introduction comes from left */
-
-.hero-content {
-    animation: fromLeft 1s ease-out;
-}
-
-
-/* Profile image comes from right */
-
-.profile-container {
-    animation: fromRight 1s ease-out;
-}
-
-
-/* Social links come from bottom */
-
-.profile-links {
-    animation: fromBottom 1.2s ease-out;
-}
-
-
-/* Resume comes from bottom */
-
-.resume-btn {
-    animation: fromBottom 1.4s ease-out;
-}
-
-
-/* =========================
-   ANIMATION KEYFRAMES
-========================= */
 
 @keyframes fromTop {
 
     from {
         opacity: 0;
-        transform: translateY(-80px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-@keyframes fromLeft {
-
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-@keyframes fromRight {
-
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-@keyframes fromBottom {
-
-    from {
-        opacity: 0;
-        transform: translateY(70px);
+        transform: translateY(-50px);
     }
 
     to {
@@ -272,253 +711,101 @@ p {
 
 
 /* =========================
-   MOBILE RESPONSIVE
+   MOBILE
 ========================= */
 
-@media (max-width: 768px) {
-
-    /* =========================
-       NAVBAR
-    ========================= */
+@media (max-width: 991px) {
 
     .custom-navbar {
-        padding: 10px 15px;
+        padding: 14px 0;
     }
 
-    .profile-logo {
-        width: 40px;
-        height: 40px;
-
-        margin-left: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .custom-navbar .brand-name {
-        font-size: 22px;
-        padding-left: 10px;
-        padding-top: 0;
-        margin-bottom: 0;
-    }
-
-    .custom-navbar .navbar-nav {
-        margin-right: 0 !important;
+    .navbar-nav {
         margin-top: 15px;
-        gap: 0;
+        gap: 5px;
     }
 
-    .custom-navbar .nav-link {
-        padding: 10px 5px !important;
-        font-size: 16px;
+    .nav-link {
+        padding: 10px 0 !important;
     }
 
-
-    /* =========================
-       HAMBURGER BUTTON
-    ========================= */
-
-    .navbar-toggler {
-        width: 45px;
-        height: 40px;
-        padding: 5px;
-        font-size: 16px;
-    }
-
-    .navbar-toggler-icon {
-        width: 22px;
-        height: 22px;
+    .nav-link::after {
+        left: 0;
+        right: auto;
+        width: 50px;
     }
 
 
-    /* =========================
-       HERO
-    ========================= */
+    /* Hero */
 
-    .hero {
-        width: 100%;
-        min-height: auto;
-        padding: 50px 15px 40px;
-        display: block;
+    .hero-section {
+        padding-top: 120px;
         text-align: center;
     }
 
-    .hero .container {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+    .hero-content {
+        padding: 20px 15px;
     }
 
-    .hero .row {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+    .hero-content h1 {
+        font-size: 44px;
     }
 
-    .hero .col-md-6 {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
+    .hero-content h2 {
+        font-size: 27px;
     }
 
-
-    /* =========================
-       HERO HEADINGS
-    ========================= */
-
-    .hero h1 {
-        font-size: 32px;
-        line-height: 1.3;
-        margin-left: 0 !important;
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
     }
-
-
-    /* =========================
-       HERO PARAGRAPH
-    ========================= */
-
-    .hero p {
-        font-size: 15px;
-        line-height: 1.7;
-        margin-top: 20px;
-    }
-
-
-    /* =========================
-       SOCIAL LINKS
-    ========================= */
 
     .profile-links {
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
-
-        margin: 25px 0;
-        padding: 20px 0;
     }
-
-    .social-link {
-        width: 55px;
-        height: 55px;
-        margin-right: 0;
-    }
-
-
-    /* =========================
-       RESUME BUTTON
-    ========================= */
 
     .resume-btn {
-        margin: 25px auto 0;
+        margin-top: 25px;
+    }
+
+    .profile-container {
+        margin-top: 60px;
+    }
+
+    .profile-container .profile-image {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
     }
 
 
-    /* =========================
-       PROFILE IMAGE
-    ========================= */
+    /* About */
 
-    .hero .profile-image {
-        display: block;
-
-        width: 270px;
-        height: 270px;
-
-        max-width: 80vw;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        margin-top: 45px;
-        margin-bottom: 20px;
-    }
-
-    .hero .profile-image:hover {
-        width: 275px;
-        height: 275px;
-    }
-
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about {
-        padding: 60px 20px;
+    .about-section {
         text-align: center;
     }
 
-    .about h1 {
-        font-size: 32px;
-        margin-top: 30px;
+    .about-image {
+        width: 320px;
+        height: 360px;
+        margin: 0 auto 50px;
     }
 
-    .about p {
-        font-size: 15px;
-        line-height: 1.8;
+    .about-content {
+        padding: 10px 15px;
     }
 
-
-    /* =========================
-       SKILLS
-    ========================= */
-
-    .skills-page {
-        padding: 60px 15px;
-    }
-
-    .skills-heading h1 {
-        font-size: 32px;
-    }
-
-    .skills-heading p {
-        font-size: 15px;
-    }
-
-    .skill-card {
-        padding: 25px 20px;
+    .about-brand {
+        font-size: 40px;
     }
 
 
-    /* =========================
-       SERVICES
-    ========================= */
+    /* Skills */
 
-    .services-page {
-        padding: 60px 15px;
-    }
-
-    .services-heading h1 {
-        font-size: 32px;
-    }
-
-    .services-heading p {
-        font-size: 15px;
-    }
-
-    .service-card {
-        padding: 30px 20px;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-page {
-        padding: 60px 15px;
-    }
-
+    .skills-heading h1,
+    .services-heading h1,
     .contact-heading h1 {
-        font-size: 32px;
-    }
-
-    .contact-form {
-        padding: 25px 20px;
-    }
-
-    .contact-form h2 {
-        font-size: 24px;
+        font-size: 40px;
     }
 
 }
@@ -528,69 +815,129 @@ p {
    SMALL MOBILE
 ========================= */
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
 
-    .profile-logo {
-        width: 38px;
-        height: 38px;
-    }
-
-    .custom-navbar .brand-name {
-        font-size: 20px;
+    html {
+        scroll-padding-top: 70px;
     }
 
 
-    /* Smaller hamburger */
+    /* Navbar */
 
-    .navbar-toggler {
-        width: 40px;
-        height: 36px;
-        padding: 4px;
-    }
-
-    .navbar-toggler-icon {
-        width: 20px;
-        height: 20px;
+    .logo {
+        font-size: 24px;
     }
 
 
-    .hero {
-        padding: 40px 10px 30px;
+    /* Hero */
+
+    .hero-section {
+        padding-top: 100px;
+        padding-bottom: 60px;
     }
 
-    .hero h1 {
-        font-size: 27px;
+    .hero-content h1 {
+        font-size: 36px;
     }
 
-    .hero p {
+    .hero-content h2 {
+        font-size: 23px;
+    }
+
+    .hero-description {
         font-size: 15px;
+        line-height: 1.7;
     }
 
-    .hero .profile-image {
+    .profile-container {
+        margin-top: 40px;
+    }
+
+    .profile-container .profile-image {
         width: 250px;
         height: 250px;
-        max-width: 80vw;
+        border-width: 6px;
     }
 
-    .hero .profile-image:hover {
-        width: 255px;
-        height: 255px;
+
+    /* Social */
+
+    .profile-links {
+        gap: 10px;
     }
 
     .social-link {
-        width: 52px;
-        height: 52px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+
+    /* About */
+
+    .about-section {
+        padding: 90px 0;
+    }
+
+    .about-image {
+        width: 260px;
+        height: 300px;
+    }
+
+    .about-brand {
+        font-size: 34px;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+
+    /* Skills */
+
+    .skills-page,
+    .services-page,
+    .contact-page {
+        padding: 90px 0;
+    }
+
+    .skills-heading,
+    .services-heading,
+    .contact-heading {
+        margin-bottom: 40px;
     }
 
     .skills-heading h1,
     .services-heading h1,
     .contact-heading h1 {
-        font-size: 28px;
+        font-size: 34px;
     }
 
-    .skill-card h3,
-    .service-card h3 {
-        font-size: 19px;
+
+    /* Contact */
+
+    .contact-form-container form {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+
+    /* Animation */
+
+    [data-reveal="left"] {
+        transform: translateX(-50px);
+    }
+
+    [data-reveal="right"] {
+        transform: translateX(50px);
+    }
+
+    [data-reveal="bottom"] {
+        transform: translateY(50px);
+    }
+
+    [data-reveal="top"] {
+        transform: translateY(-50px);
     }
 
 }
