@@ -250,7 +250,7 @@ if (contactForm) {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8000/contact",
+                "https://portfolio-backend-r4r2-cdf6vty3m-gbcodes.vercel.app",
                 {
                     method: "POST",
                     headers: {
