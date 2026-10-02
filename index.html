@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta
+      name="description"
+      content="Ghous Bux - Software Engineering Student and Full-Stack Developer Portfolio"
+    />
+
     <title>Ghous Bux | Full-Stack Developer</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,73 +24,72 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
   </head>
 
   <body>
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <!-- ================= NAVBAR ================= -->
 
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
       <div class="container">
-        <img src="images/profile-4.jpeg" class="profile-logo" alt="Ghous Bux" />
-        <!-- Brand -->
-        <a class="navbar-brand logo" href="#home"> <span>GB</span> Codes </a>
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <img
+            src="images/profile-4.jpeg"
+            alt="Ghous Bux"
+            class="profile-logo"
+          />
 
-        <!-- Mobile Button -->
+          <h4 class="brand-name mb-0">GB<span>/Codes</span></h4>
+        </a>
+
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i class="bi bi-list"></i>
         </button>
 
-        <!-- Navigation -->
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto me-5">
             <li class="nav-item">
-              <a class="nav-link active" href="#home"> Home </a>
+              <a class="nav-link active" href="#home">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#about"> About </a>
+              <a class="nav-link" href="#about">About</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#skills"> Skills </a>
+              <a class="nav-link" href="#skills">Skills</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#services"> Services </a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#contact"> Contact </a>
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- =========================
-         HOME SECTION
-    ========================== -->
+    <!-- ================= HERO ================= -->
 
     <section id="home" class="hero-section">
       <div class="container">
-        <div class="row align-items-center">
-          <!-- Hero Content -->
-          <div class="col-lg-6 hero-content" data-reveal="left">
-            <h1>
-              Hi, I'm
-              <span class="hero-name"> Ghous Bux </span>
-            </h1>
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-7 hero-content" data-reveal>
+            <p class="hero-small-text">Welcome to my portfolio</p>
+
+            <h1>Hi, I'm <span class="highlight">Ghous Bux</span></h1>
 
             <h2>
               <span id="user-name"></span>
@@ -97,13 +101,25 @@
               applications.
             </p>
 
+            <div class="hero-buttons">
+              <a href="#projects" class="btn-primary-custom">
+                View Projects
+                <i class="bi bi-arrow-right"></i>
+              </a>
+
+              <a href="#contact" class="btn-outline-custom">
+                Hire Me
+                <i class="bi bi-person-workspace"></i>
+              </a>
+            </div>
+
             <!-- Social Links -->
-            <div class="profile-links">
+
+            <div class="social-links">
               <a
                 href="https://github.com/ghousbux430-ux"
                 target="_blank"
                 class="social-link"
-                aria-label="GitHub"
               >
                 <i class="bi bi-github"></i>
               </a>
@@ -112,21 +128,21 @@
                 href="https://www.linkedin.com/in/ghous-bux-a11a98376/"
                 target="_blank"
                 class="social-link"
-                aria-label="LinkedIn"
               >
                 <i class="bi bi-linkedin"></i>
               </a>
 
-              <a href="#" class="social-link" aria-label="Facebook">
+              <a href="#" class="social-link">
                 <i class="bi bi-facebook"></i>
               </a>
 
-              <a href="#" class="social-link" aria-label="Instagram">
+              <a href="#" class="social-link">
                 <i class="bi bi-instagram"></i>
               </a>
             </div>
 
             <!-- Resume -->
+
             <a href="resume.pdf" class="resume-btn" target="_blank">
               <i class="bi bi-file-earmark-person"></i>
               View Resume
@@ -134,7 +150,8 @@
           </div>
 
           <!-- Profile Image -->
-          <div class="col-lg-6 profile-container" data-reveal="right">
+
+          <div class="col-lg-5 text-center" data-reveal>
             <img
               src="images/profile-4.jpeg"
               alt="Ghous Bux"
@@ -145,362 +162,531 @@
       </div>
     </section>
 
-    <!-- =========================
-         ABOUT SECTION
-    ========================== -->
+    <!-- ================= ABOUT ================= -->
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section section-padding">
       <div class="container">
         <div class="row align-items-center">
-          <!-- About Image -->
-          <div class="col-lg-5" data-reveal="left">
-            <div class="hexagon about-image">
-              <img
-                src="images/profile-4.jpeg"
-                alt="Ghous Bux"
-                class="profile-image"
-              />
-            </div>
+          <div class="col-lg-5 text-center" data-reveal>
+            <img
+              src="images/profile-4.jpeg"
+              alt="About Ghous Bux"
+              class="about-image"
+            />
           </div>
 
-          <!-- About Content -->
-          <div class="col-lg-7 about-content" data-reveal="right">
-            <h1 class="about-brand">
-              <span>About Me</span>
-            </h1>
+          <div class="col-lg-7" data-reveal>
+            <p class="section-subtitle">Get To Know Me</p>
 
-            <h2>Full-Stack Developer</h2>
+            <h2 class="section-title">About <span>Me</span></h2>
+
+            <h3>Full-Stack Developer</h3>
 
             <p>
               I am a Software Engineering student and aspiring Full-Stack
-              Developer passionate about building modern web applications. I
-              work with Python, Java, JavaScript, Django, FastAPI, and
-              databases.
+              Developer interested in building modern, responsive and
+              user-friendly applications.
             </p>
 
             <p>
-              I enjoy turning ideas into practical and user-friendly software
-              solutions. I continuously improve my programming and
-              problem-solving skills through academic and personal projects.
+              I work with technologies including Python, Java, JavaScript,
+              Django, FastAPI and databases. I enjoy turning ideas into
+              practical software solutions.
             </p>
 
             <p>
-              I am always exploring new technologies and learning better ways to
-              develop software. My goal is to grow as a professional developer
-              and build impactful digital solutions.
+              I am continuously improving my development skills through academic
+              projects, personal projects and hands-on learning.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         SKILLS SECTION
-    ========================== -->
+    <!-- ================= SKILLS ================= -->
 
-    <section id="skills" class="skills-page">
+    <section id="skills" class="skills-section section-padding">
       <div class="container">
-        <!-- Heading -->
-        <div class="skills-heading skills-heading-animation" data-reveal="top">
-          <h1>M<span>y </span>S<span>kills</span></h1>
+        <div class="text-center" data-reveal>
+          <p class="section-subtitle">What I Know</p>
 
-          <p>Technologies and concepts I work with.</p>
+          <h2 class="section-title">My <span>Skills</span></h2>
         </div>
 
-        <!-- Skills Cards -->
-        <div class="row g-4 skills-cards-animation">
+        <div class="row g-4 mt-4">
           <!-- Programming -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
+
+          <div class="col-lg-4 col-md-6" data-reveal>
             <div class="skill-card">
               <div class="skill-icon">
                 <i class="bi bi-code-slash"></i>
               </div>
 
-              <h3>Programming</h3>
+              <h4>Programming</h4>
 
-              <p>Python, Java, JavaScript, C++</p>
+              <div class="skill-list">
+                <span>Python</span>
+                <span>Java</span>
+                <span>JavaScript</span>
+                <span>C++</span>
+              </div>
             </div>
           </div>
 
-          <!-- Web Development -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
+          <!-- Web -->
+
+          <div class="col-lg-4 col-md-6" data-reveal>
             <div class="skill-card">
               <div class="skill-icon">
-                <i class="bi bi-globe"></i>
+                <i class="bi bi-globe2"></i>
               </div>
 
-              <h3>Web Development</h3>
+              <h4>Web Development</h4>
 
-              <p>HTML5, CSS3, Bootstrap, JavaScript, Django, FastAPI</p>
+              <div class="skill-list">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Bootstrap</span>
+                <span>JavaScript</span>
+                <span>Django</span>
+                <span>FastAPI</span>
+              </div>
             </div>
           </div>
 
           <!-- Databases -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
+
+          <div class="col-lg-4 col-md-6" data-reveal>
             <div class="skill-card">
               <div class="skill-icon">
                 <i class="bi bi-database"></i>
               </div>
 
-              <h3>Databases</h3>
+              <h4>Databases</h4>
 
-              <p>MySQL, PostgreSQL, SQL</p>
+              <div class="skill-list">
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>SQL</span>
+              </div>
             </div>
           </div>
 
-          <!-- Development Tools -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
+          <!-- Tools -->
+
+          <div class="col-lg-4 col-md-6" data-reveal>
             <div class="skill-card">
               <div class="skill-icon">
                 <i class="bi bi-tools"></i>
               </div>
 
-              <h3>Development Tools</h3>
+              <h4>Development Tools</h4>
 
-              <p>Git, GitHub, VS Code, MySQL Workbench</p>
+              <div class="skill-list">
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>VS Code</span>
+                <span>MySQL Workbench</span>
+              </div>
             </div>
           </div>
 
-          <!-- Core Concepts -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
+          <!-- Core -->
+
+          <div class="col-lg-4 col-md-6" data-reveal>
             <div class="skill-card">
               <div class="skill-icon">
                 <i class="bi bi-diagram-3"></i>
               </div>
 
-              <h3>Core Concepts</h3>
+              <h4>Core Concepts</h4>
 
-              <p>OOP, Data Structures, Algorithms, Database Design</p>
+              <div class="skill-list">
+                <span>OOP</span>
+                <span>Data Structures</span>
+                <span>Algorithms</span>
+                <span>Database Design</span>
+              </div>
             </div>
           </div>
 
           <!-- Backend -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
+
+          <div class="col-lg-4 col-md-6" data-reveal>
             <div class="skill-card">
               <div class="skill-icon">
                 <i class="bi bi-server"></i>
               </div>
 
-              <h3>Backend & APIs</h3>
+              <h4>Backend & APIs</h4>
 
-              <p>REST APIs, FastAPI, Django, CRUD</p>
+              <div class="skill-list">
+                <span>REST APIs</span>
+                <span>FastAPI</span>
+                <span>Django</span>
+                <span>CRUD</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         SERVICES SECTION
-    ========================== -->
+    <!-- ================= PROJECTS ================= -->
 
-    <section id="services" class="services-page">
+    <section id="projects" class="projects-section section-padding">
       <div class="container">
-        <!-- Heading -->
-        <div
-          class="services-heading services-heading-animation"
-          data-reveal="top"
-        >
-          <h1>My Services</h1>
+        <div class="text-center" data-reveal>
+          <p class="section-subtitle">My Recent Work</p>
 
-          <p>Development services I can provide.</p>
+          <h2 class="section-title">Featured <span>Projects</span></h2>
+
+          <p class="section-description">
+            A selection of projects I have built while learning and developing
+            my software engineering skills.
+          </p>
         </div>
 
-        <!-- Services Cards -->
-        <div class="row g-4 services-cards-animation">
-          <!-- Full Stack -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="bi bi-globe2"></i>
+        <div class="row g-4 mt-4">
+          <!-- PROJECT 1 -->
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="project-card">
+              <!-- Replace this image with your screenshot -->
+              <div class="project-image">
+                <img src="/images/E-commerce Store.jpg" alt="E-commerce Store" />
+
+                <div class="project-overlay">
+                  <a href="#" target="_blank" title="Live Demo">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+
+                  <a href="#" target="_blank" title="GitHub">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
               </div>
 
-              <h3>Full-Stack Development</h3>
+              <div class="project-content">
+                <p class="project-number">01</p>
 
-              <p>
-                Building complete modern web applications with frontend and
-                backend technologies.
-              </p>
+                <h3>E-commerce Store</h3>
+
+                <p>
+                  A modern online shopping platform with product browsing,
+                  categories, cart functionality and a responsive user
+                  interface.
+                </p>
+
+                <div class="tech-stack">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                  <span>Django</span>
+                  <span>MySQL</span>
+                </div>
+
+                <div class="project-buttons">
+                  <a href="#" class="project-btn">
+                    <i class="bi bi-eye"></i>
+                    Live Demo
+                  </a>
+
+                  <a href="#" class="project-btn outline">
+                    <i class="bi bi-github"></i>
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Python Backend -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="bi bi-code-slash"></i>
+          <!-- PROJECT 2 -->
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="project-card">
+              <!-- Replace this image with your screenshot -->
+              <div class="project-image">
+                <img
+                  src="/images/hotel.jpg"
+                  alt="Hotel and Resort Booking Platform"
+                />
+
+                <div class="project-overlay">
+                  <a href="#" target="_blank" title="Live Demo">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+
+                  <a href="#" target="_blank" title="GitHub">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
               </div>
 
-              <h3>Python Backend Development</h3>
+              <div class="project-content">
+                <p class="project-number">02</p>
 
-              <p>
-                Developing reliable backend applications using Python, Django
-                and FastAPI.
-              </p>
+                <h3>Hotel & Resort Booking Platform</h3>
+
+                <p>
+                  A modern hotel and resort platform designed for exploring
+                  accommodations, viewing details and managing booking-related
+                  interactions.
+                </p>
+
+                <div class="tech-stack">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                  <span>Backend</span>
+                </div>
+
+                <div class="project-buttons">
+                  <a href="#" class="project-btn">
+                    <i class="bi bi-eye"></i>
+                    Live Demo
+                  </a>
+
+                  <a href="#" class="project-btn outline">
+                    <i class="bi bi-github"></i>
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Java -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="bi bi-cup-hot"></i>
+          <!-- PROJECT 3 -->
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="project-card">
+              <!-- Replace this image with your screenshot -->
+              <div class="project-image">
+                <img src="/images/portfolio.jpg" alt="Personal Portfolio" />
+
+                <div class="project-overlay">
+                  <a href="#" target="_blank" title="Live Demo">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+
+                  <a
+                    href="https://github.com/ghousbux430-ux"
+                    target="_blank"
+                    title="GitHub"
+                  >
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
               </div>
 
-              <h3>Java Development</h3>
+              <div class="project-content">
+                <p class="project-number">03</p>
 
-              <p>
-                Creating Java applications using OOP, GUI development and
-                database connectivity.
-              </p>
-            </div>
-          </div>
+                <h3>Personal Portfolio</h3>
 
-          <!-- REST APIs -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="bi bi-cloud-arrow-up"></i>
+                <p>
+                  A responsive personal portfolio website showcasing my skills,
+                  services, projects and software development journey.
+                </p>
+
+                <div class="tech-stack">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                </div>
+
+                <div class="project-buttons">
+                  <a href="#" class="project-btn">
+                    <i class="bi bi-eye"></i>
+                    Live Demo
+                  </a>
+
+                  <a
+                    href="https://github.com/ghousbux430-ux"
+                    target="_blank"
+                    class="project-btn outline"
+                  >
+                    <i class="bi bi-github"></i>
+                    GitHub
+                  </a>
+                </div>
               </div>
-
-              <h3>REST API Development</h3>
-
-              <p>
-                Building structured and scalable REST APIs using FastAPI and
-                Django.
-              </p>
-            </div>
-          </div>
-
-          <!-- Database -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="bi bi-database"></i>
-              </div>
-
-              <h3>Database Development</h3>
-
-              <p>
-                Designing and managing relational databases using MySQL and
-                PostgreSQL.
-              </p>
-            </div>
-          </div>
-
-          <!-- Frontend -->
-          <div class="col-lg-4 col-md-6" data-reveal="bottom">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="bi bi-layout-text-window"></i>
-              </div>
-
-              <h3>Frontend Development</h3>
-
-              <p>
-                Creating responsive and modern interfaces using HTML, CSS,
-                JavaScript and Bootstrap.
-              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         CONTACT SECTION
-    ========================== -->
+    <!-- ================= SERVICES ================= -->
 
-    <section id="contact" class="contact-page">
+    <section id="services" class="services-section section-padding">
       <div class="container">
-        <!-- Heading -->
-        <div class="contact-heading" data-reveal="top">
-          <h1>Contact Me</h1>
+        <div class="text-center" data-reveal>
+          <p class="section-subtitle">What I Offer</p>
 
-          <p>Have a project or question? Send me a message.</p>
+          <h2 class="section-title">My <span>Services</span></h2>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form-container" data-reveal="bottom">
-          <form id="contactForm">
-            <!-- Name -->
-            <div class="form-group">
-              <label for="name"> Full Name </label>
+        <div class="row g-4 mt-4">
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-window"></i>
+              </div>
+
+              <h4>Frontend Development</h4>
+
+              <p>
+                Responsive and modern interfaces using HTML, CSS, JavaScript and
+                Bootstrap.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-code-square"></i>
+              </div>
+
+              <h4>Backend Development</h4>
+
+              <p>
+                Backend applications and APIs using Python, Django and FastAPI.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-layers"></i>
+              </div>
+
+              <h4>Full-Stack Development</h4>
+
+              <p>
+                Complete web applications combining frontend, backend and
+                databases.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-braces"></i>
+              </div>
+
+              <h4>REST API Development</h4>
+
+              <p>Structured and scalable REST APIs with CRUD functionality.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-database-check"></i>
+              </div>
+
+              <h4>Database Development</h4>
+
+              <p>
+                Database design and integration using MySQL, PostgreSQL and SQL.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-phone"></i>
+              </div>
+
+              <h4>Responsive Web Design</h4>
+
+              <p>Websites optimized for desktop, tablet and mobile devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <p class="section-subtitle">Get In Touch</p>
+
+          <h2 class="section-title">Contact <span>Me</span></h2>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-8" data-reveal>
+            <form id="contact-form" class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+              </div>
 
               <input
                 type="text"
-                id="name"
-                name="name"
-                class="form-control"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-              <label for="email"> Email Address </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-control"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <!-- Subject -->
-            <div class="form-group">
-              <label for="subject"> Subject </label>
-
-              <input
-                type="text"
-                id="subject"
                 name="subject"
-                class="form-control"
-                placeholder="Enter subject"
+                placeholder="Subject"
                 required
               />
-            </div>
-
-            <!-- Message -->
-            <div class="form-group">
-              <label for="message"> Message </label>
 
               <textarea
-                id="message"
                 name="message"
-                class="form-control"
                 rows="6"
-                placeholder="Write your message..."
+                placeholder="Your Message"
                 required
               ></textarea>
-            </div>
 
-            <!-- Button -->
-            <button type="submit" class="send-btn">
-              <i class="bi bi-send"></i>
-              Send Message
-            </button>
-          </form>
+              <button type="submit" class="submit-btn">
+                <i class="bi bi-send"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- ================= FOOTER ================= -->
 
     <footer class="footer">
-      <p>© 2026 Ghous Bux. All Rights Reserved.</p>
+      <div class="container">
+        <p>© 2026 <span>Ghous Bux</span>. All Rights Reserved.</p>
+      </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
+    <!-- Bootstrap JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JavaScript -->
+    <!-- Custom JS -->
+
     <script src="script.js"></script>
   </body>
 </html>

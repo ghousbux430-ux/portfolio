@@ -2,236 +2,317 @@
    TYPING ANIMATION
 ========================= */
 
-const name = "Full-Stack Developer";
+const userName = document.getElementById("user-name");
 
-const nameElement = document.getElementById("user-name");
-
-const colors = ["#FF6B00", "#38bdf8", "#a855f7", "#22c55e"];
-
-let index = 0;
-let deleting = false;
-let colorIndex = 0;
-
-function typeName() {
-  if (!nameElement) {
-    return;
-  }
-
-  if (!deleting) {
-    nameElement.textContent = name.substring(0, index + 1);
-
-    index++;
-
-    if (index === name.length) {
-      deleting = true;
-
-      setTimeout(typeName, 1500);
-
-      return;
+const typingTexts = [
+    {
+        text: "Full-Stack Developer",
+        color: "#FF6B00"
+    },
+    {
+        text: "Python Developer",
+        color: "#3776AB"
+    },
+    {
+        text: "Backend Developer",
+        color: "#22C55E"
+    },
+    {
+        text: "Software Engineering Student",
+        color: "#A855F7"
     }
-  } else {
-    nameElement.textContent = name.substring(0, index - 1);
+];
 
-    index--;
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-    if (index === 0) {
-      deleting = false;
+const typingSpeed = 100;
+const deletingSpeed = 60;
+const pauseTime = 1500;
 
-      colorIndex++;
 
-      if (colorIndex >= colors.length) {
-        colorIndex = 0;
-      }
+function typeEffect() {
 
-      nameElement.style.color = colors[colorIndex];
+    if (!userName) return;
+
+    const currentText = typingTexts[textIndex];
+
+    // Apply different color to each text
+    userName.style.color = currentText.color;
+
+    if (!isDeleting) {
+
+        // Typing
+        userName.textContent =
+            currentText.text.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        // When complete, wait before deleting
+        if (charIndex === currentText.text.length) {
+
+            isDeleting = true;
+
+            setTimeout(typeEffect, pauseTime);
+
+            return;
+        }
+
+    } else {
+
+        // Deleting
+        userName.textContent =
+            currentText.text.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        // When deleted completely
+        if (charIndex === 0) {
+
+            isDeleting = false;
+
+            textIndex++;
+
+            // Restart from first text
+            if (textIndex >= typingTexts.length) {
+                textIndex = 0;
+            }
+        }
     }
-  }
 
-  setTimeout(typeName, deleting ? 70 : 120);
+    setTimeout(
+        typeEffect,
+        isDeleting ? deletingSpeed : typingSpeed
+    );
 }
 
-/* Start Typing */
 
-typeName();
+// Start typing animation
+if (userName) {
+    typeEffect();
+}
+
+
 
 /* =========================
    SCROLL REVEAL
-   REPLAYS EVERY TIME
 ========================= */
 
-const revealElements = document.querySelectorAll("[data-reveal]");
+const revealElements =
+    document.querySelectorAll("[data-reveal]");
+
 
 function revealOnScroll() {
-  const windowHeight = window.innerHeight;
 
-  revealElements.forEach(function (element) {
-    const elementTop = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-    const elementBottom = element.getBoundingClientRect().bottom;
+    revealElements.forEach(element => {
 
-    /*
-            Element enters viewport
-        */
+        const elementTop =
+            element.getBoundingClientRect().top;
 
-    if (elementTop < windowHeight - 100 && elementBottom > 100) {
-      element.classList.add("reveal-show");
-    } else {
+        if (elementTop < windowHeight - 80) {
 
-    /*
-            Element leaves viewport
+            element.classList.add("show");
 
-            Remove class so animation
-            can happen again.
-        */
-      element.classList.remove("reveal-show");
-    }
-  });
+        }
+
+    });
 }
 
-/* Run when page loads */
-
-window.addEventListener("load", revealOnScroll);
-
-/* Run while scrolling */
 
 window.addEventListener("scroll", revealOnScroll);
 
-/* Run when window size changes */
+window.addEventListener("load", revealOnScroll);
 
-window.addEventListener("resize", revealOnScroll);
 
-/* =========================
-   SKILLS CARD DELAYS
-========================= */
-
-const skillCards = document.querySelectorAll("#skills [data-reveal]");
-
-skillCards.forEach(function (card, index) {
-  card.classList.add("delay-" + ((index % 6) + 1));
-});
 
 /* =========================
-   SERVICES CARD DELAYS
+   ACTIVE NAVBAR
 ========================= */
 
-const serviceCards = document.querySelectorAll("#services [data-reveal]");
+const sections =
+    document.querySelectorAll("section[id]");
 
-serviceCards.forEach(function (card, index) {
-  card.classList.add("delay-" + ((index % 6) + 1));
-});
+const navLinks =
+    document.querySelectorAll(".nav-link");
 
-/* =========================
-   ACTIVE NAVBAR LINK
-========================= */
-
-const sections = document.querySelectorAll("section[id]");
-
-const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
 function updateActiveNav() {
-  let currentSection = "";
 
-  const scrollPosition = window.scrollY + 150;
+    let currentSection = "";
 
-  sections.forEach(function (section) {
-    const sectionTop = section.offsetTop;
+    sections.forEach(section => {
 
-    const sectionHeight = section.offsetHeight;
+        const sectionTop =
+            section.offsetTop - 150;
 
-    if (
-      scrollPosition >= sectionTop &&
-      scrollPosition < sectionTop + sectionHeight
-    ) {
-      currentSection = section.getAttribute("id");
-    }
-  });
+        const sectionHeight =
+            section.offsetHeight;
 
-  navLinks.forEach(function (link) {
-    link.classList.remove("active");
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
 
-    const href = link.getAttribute("href");
+            currentSection =
+                section.getAttribute("id");
 
-    if (href === "#" + currentSection) {
-      link.classList.add("active");
-    }
-  });
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href") ===
+            `#${currentSection}`
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
 }
 
-/* Update active link while scrolling */
 
 window.addEventListener("scroll", updateActiveNav);
 
-/* Update when page loads */
-
 window.addEventListener("load", updateActiveNav);
+
+
 
 /* =========================
    MOBILE NAVBAR
 ========================= */
 
-const navbar = document.getElementById("navbarNav");
+const mobileNavLinks =
+    document.querySelectorAll(".navbar-nav .nav-link");
 
-const navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");
+const navbarCollapse =
+    document.querySelector(".navbar-collapse");
 
-navbarLinks.forEach(function (link) {
-  link.addEventListener("click", function () {
-    if (window.innerWidth < 992) {
-      const bsCollapse = bootstrap.Collapse.getInstance(navbar);
 
-      if (bsCollapse) {
-        bsCollapse.hide();
-      }
-    }
-  });
+mobileNavLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (
+            navbarCollapse &&
+            navbarCollapse.classList.contains("show")
+        ) {
+
+            const bsCollapse =
+                bootstrap.Collapse.getInstance(navbarCollapse);
+
+            if (bsCollapse) {
+
+                bsCollapse.hide();
+
+            }
+
+        }
+
+    });
+
 });
+
+
 
 /* =========================
    CONTACT FORM
 ========================= */
 
-const contactForm = document.getElementById("contactForm");
+const contactForm =
+    document.getElementById("contact-form");
+
 
 if (contactForm) {
-  contactForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
 
-    const sendButton = contactForm.querySelector(".send-btn");
+    contactForm.addEventListener(
+        "submit",
+        async function (event) {
 
-    const originalButtonText = sendButton.innerHTML;
+            event.preventDefault();
 
-    /* Disable button */
+            const submitButton =
+                contactForm.querySelector(".submit-btn");
 
-    sendButton.disabled = true;
+            const originalText =
+                submitButton.innerHTML;
 
-    sendButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+            submitButton.innerHTML =
+                '<i class="bi bi-hourglass-split"></i> Sending...';
 
-    const formData = new FormData(contactForm);
+            submitButton.disabled = true;
 
-    try {
-      const response = await fetch("http://127.0.0.1:8000/contact", {
-        method: "POST",
-        body: formData,
-      });
 
-      const result = await response.json();
+            const formData =
+                new FormData(contactForm);
 
-      if (response.ok) {
-        alert(result.message || "Message sent successfully!");
 
-        contactForm.reset();
-      } else {
-        alert(result.detail || "Failed to send message.");
-      }
-    } catch (error) {
-      console.error("Contact form error:", error);
+            try {
 
-      alert("Failed to connect to the backend.");
-    }
+                const response =
+                    await fetch(
+                        "http://127.0.0.1:8000/contact",
+                        {
+                            method: "POST",
+                            body: formData
+                        }
+                    );
 
-    /* Restore button */
 
-    sendButton.disabled = false;
+                const data =
+                    await response.json();
 
-    sendButton.innerHTML = originalButtonText;
-  });
+
+                if (response.ok) {
+
+                    alert(
+                        data.message ||
+                        "Message sent successfully!"
+                    );
+
+                    contactForm.reset();
+
+                } else {
+
+                    alert(
+                        data.detail ||
+                        "Something went wrong. Please try again."
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Contact form error:",
+                    error
+                );
+
+                alert(
+                    "Unable to connect to the server. " +
+                    "Please make sure the backend is running."
+                );
+
+            } finally {
+
+                submitButton.innerHTML =
+                    originalText;
+
+                submitButton.disabled = false;
+
+            }
+
+        }
+    );
+
 }
