@@ -229,90 +229,55 @@ mobileNavLinks.forEach(link => {
    CONTACT FORM
 ========================= */
 
-const contactForm =
-    document.getElementById("contact-form");
-
+const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
+    contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-    contactForm.addEventListener(
-        "submit",
-        async function (event) {
+        const submitButton = contactForm.querySelector(".submit-btn");
+        const originalText = submitButton.innerHTML;
 
-            event.preventDefault();
+        const formData = {
+            name: contactForm.elements["name"].value.trim(),
+            email: contactForm.elements["email"].value.trim(),
+            subject: contactForm.elements["subject"].value.trim(),
+            message: contactForm.elements["message"].value.trim()
+        };
 
-            const submitButton =
-                contactForm.querySelector(".submit-btn");
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
 
-            const originalText =
-                submitButton.innerHTML;
-
-            submitButton.innerHTML =
-                '<i class="bi bi-hourglass-split"></i> Sending...';
-
-            submitButton.disabled = true;
-
-
-            const formData =
-                new FormData(contactForm);
-
-
-            try {
-
-                const response =
-                    await fetch(
-                        "http://127.0.0.1:8000/contact",
-                        {
-                            method: "POST",
-                            body: formData
-                        }
-                    );
-
-
-                const data =
-                    await response.json();
-
-
-                if (response.ok) {
-
-                    alert(
-                        data.message ||
-                        "Message sent successfully!"
-                    );
-
-                    contactForm.reset();
-
-                } else {
-
-                    alert(
-                        data.detail ||
-                        "Something went wrong. Please try again."
-                    );
-
+        try {
+            const response = await fetch(
+                "http://127.0.0.1:8000/contact",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
                 }
+            );
 
-            } catch (error) {
+            const result = await response.json();
 
-                console.error(
-                    "Contact form error:",
-                    error
+            if (!response.ok) {
+                throw new Error(
+                    result.detail || "Unable to send your message."
                 );
-
-                alert(
-                    "Unable to connect to the server. " +
-                    "Please make sure the backend is running."
-                );
-
-            } finally {
-
-                submitButton.innerHTML =
-                    originalText;
-
-                submitButton.disabled = false;
-
             }
 
-        }
-    );
+            alert("Message sent successfully!");
+            contactForm.reset();
 
+        } catch (error) {
+            console.error("Contact form error:", error);
+            alert(error.message || "Something went wrong.");
+
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText;
+        }
+    });
 }
