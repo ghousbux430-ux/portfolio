@@ -225,9 +225,13 @@ mobileNavLinks.forEach(link => {
 
 
 
+
 /* =========================
    CONTACT FORM
 ========================= */
+
+const CONTACT_API_URL =
+    "https://portfolio-backend-r4r2-cdf6vty3m-gbcodes.vercel.app/contact";
 
 const contactForm = document.getElementById("contact-form");
 
@@ -236,48 +240,80 @@ if (contactForm) {
         event.preventDefault();
 
         const submitButton = contactForm.querySelector(".submit-btn");
-        const originalText = submitButton.innerHTML;
+        const originalHTML = submitButton
+            ? submitButton.innerHTML
+            : "Send Message";
 
         const formData = {
-            name: contactForm.elements["name"].value.trim(),
-            email: contactForm.elements["email"].value.trim(),
-            subject: contactForm.elements["subject"].value.trim(),
-            message: contactForm.elements["message"].value.trim()
+            name: contactForm.elements["name"]?.value.trim() || "",
+            email: contactForm.elements["email"]?.value.trim() || "",
+            subject: contactForm.elements["subject"]?.value.trim() || "",
+            message: contactForm.elements["message"]?.value.trim() || ""
         };
 
-        submitButton.disabled = true;
-        submitButton.textContent = "Sending...";
+        if (
+            !formData.name ||
+            !formData.email ||
+            !formData.subject ||
+            !formData.message
+        ) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+        }
 
         try {
-            const response = await fetch(
-                "https://portfolio-backend-r4r2-cdf6vty3m-gbcodes.vercel.app",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(formData)
-                }
-            );
+            const response = await fetch(CONTACT_API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
 
-            const result = await response.json();
+            const responseText = await response.text();
+            let result = {};
+
+            try {
+                result = responseText ? JSON.parse(responseText) : {};
+            } catch {
+                // Handle non-JSON error responses.
+            }
 
             if (!response.ok) {
                 throw new Error(
-                    result.detail || "Unable to send your message."
+                    result.detail ||
+                    `Server error (${response.status}). Please try again.`
                 );
             }
 
-            alert("Message sent successfully!");
+            alert(
+                result.message ||
+                "Message sent successfully!"
+            );
+
             contactForm.reset();
 
         } catch (error) {
             console.error("Contact form error:", error);
-            alert(error.message || "Something went wrong.");
+
+            if (error instanceof TypeError) {
+                alert(
+                    "Could not connect to the server. Please try again later."
+                );
+            } else {
+                alert(error.message || "Something went wrong.");
+            }
 
         } finally {
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalText;
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalHTML;
+            }
         }
     });
 }
