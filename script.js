@@ -231,7 +231,7 @@ mobileNavLinks.forEach(link => {
 ========================= */
 
 const CONTACT_API_URL =
-    "https://portfolio-backend-r4r2-cdf6vty3m-gbcodes.vercel.app/contact";
+    "https://portfolio-backend-r4r2-pmspbb5sq-gbcodes.vercel.app";
 
 const contactForm = document.getElementById("contact-form");
 
